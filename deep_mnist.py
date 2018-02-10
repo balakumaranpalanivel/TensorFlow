@@ -36,7 +36,7 @@ def conv2d(x, W):
 
 def max_pool_2x2(x):
     return tf.nn.max_pool(x, ksize=[1,2,2,1], 
-    strides=[1,1,1,1], padding='SAME')
+    strides=[1,2,2,1], padding='SAME')
 
 # defining the layers in Neural Network
 
@@ -100,6 +100,10 @@ import time
 # define the number of epochs
 num_steps = 3000
 display_every =  100
+
+# Start timer
+start_time = time.time()
+end_time = time.time()
 
 for i in range(num_steps):
     batch = mnist.train.next_batch(50)
